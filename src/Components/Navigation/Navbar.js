@@ -40,7 +40,7 @@ export function Navbar() {
         
         
           
-          <button className="btn" onClick={toggleNavSmallScreen}>BTN</button>
+          <button className="btn" onClick={toggleNavSmallScreen}><a href="https://www.flaticon.com/free-icons/menu" title="menu icons"></a></button>
 
         </nav>
 
