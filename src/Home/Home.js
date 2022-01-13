@@ -4,9 +4,9 @@ export function Home(props) {
     
 
     return (
-        <>
-           <h1>Welcome</h1> 
-        </>
+        <div>
+           <h1>Welcome To Home</h1> 
+        </div>
     )
 }
 export default Home
