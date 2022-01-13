@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-//import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './navbar.css'
 
 export function Navbar() {
@@ -32,9 +32,15 @@ export function Navbar() {
     return (
         <nav >
             {(toggleMenu || width > 500) &&( <ul className="liste">
-          <li className='items'>Home</li>
-          <li className="items">Favorite</li>
-          <li className="items">Contact</li>
+          <NavLink to='/' className='items' style={({isActive})=>{
+              return isActive ? {color:'red'}:{color:'violet'}
+          }}>Home</NavLink>
+          <NavLink to='/favorite' className="items" style={({isActive})=>{
+              return isActive ? {color:'red'}:{color:'violet'}
+          }}>Favorite</NavLink>
+          <NavLink to='/contact' className="items" style={({isActive})=>{
+              return isActive ? {color:'red'}:{color:'violet'}
+          }}>Contact</NavLink>
          </ul> )}
           
         
