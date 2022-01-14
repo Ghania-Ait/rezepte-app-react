@@ -36,7 +36,7 @@ export function RecipeCard({title, calorie,image,ingredients,cuisineType,dietLab
                 <h3>{title} </h3>
                
             </div>
-            
+            <button  ><i class="fas fa-heart"></i></button>
         </div>
     )
 }

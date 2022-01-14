@@ -51,9 +51,9 @@ img{
       text-align: center;
   }
 
-  .container p, {
+  .container p {
       opacity: 0;
-      transition: all 4s;
+      transition: all 5s;
      
 
   }
@@ -73,5 +73,19 @@ opacity: 1;
        color: red;
    }
   
+
+   .fas{
+       color:rgb(126, 118, 118);
+       
+       font-size:25px;
+   }
+
+   .recipe button{
+       border: none;
+       position: absolute;
+       right: 5px;
+       bottom: 8px;
+       background-color:transparent;
+   }
   
   
