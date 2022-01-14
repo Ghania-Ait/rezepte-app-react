@@ -1,6 +1,7 @@
 .App{
     min-height: 100vh;
-    background-image:linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    /* background-image:linear-gradient(to right, #fa709a 0%, #fee140 100%); */
+    background-image: linear-gradient(#3a3494, rgb(112, 64, 114),#0c3d68  );
 }
 
 .search-form{
@@ -9,7 +10,7 @@
     justify-content: center;
     align-items: center;
 }
-.App h1{
+.App h2{
     margin-top: 100px;
     text-align: center;
    
@@ -29,9 +30,11 @@
     border-radius: 12px;
     margin-top: 150px;
 }
-.recipie{
+
+
+.recipies{
     display: flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  margin-top: 80px;
-}
+    justify-content:space-around;
+    flex-wrap:wrap;
+  }
+  

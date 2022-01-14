@@ -1,5 +1,6 @@
 import React from 'react'
-import './RecipeCard.css'
+import './RecipeCard.css';
+import '../../Recipie/Recipie.css'
 export function RecipeCard({title, calorie,image,ingredients}) {
 
  //const calories=Math.round({calorie})
@@ -10,18 +11,16 @@ export function RecipeCard({title, calorie,image,ingredients}) {
            
             <img src={image} alt={title}/>
               
-            <div className="container">
-                <h3> Ingredient: </h3>
+             <div className="container"> 
+                <h4> Ingredient: </h4>
                 <ol>
                     { ingredients.map(ingredient =>( 
                         <li>{ingredient.text} </li>
                         
                     ))}
                 </ol>
-               
-
-                <h2>{title} </h2>
-                <p><h3>Calories:</h3>{calorie} </p>
+                <h3>{title} </h3>
+                <p><h5>Calories:</h5>{calorie} </p>
                
             </div>
             

@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 import './Recipie.css';
+import '../Components/RecipeCard/RecipeCard.css'
 import RecipeCard from '../Components/RecipeCard/RecipeCard'
 
 export function Recipie(props) {
@@ -7,7 +8,7 @@ export function Recipie(props) {
   const appKey='74ba7c7b51afa32db443bbf058520bcd';
   
   
-  //daten  mit API Holen 
+  //daten  mit API holen 
   const[recipies,setRecipies]=useState([]); 
 
   //state für suche nach Rezepte
@@ -51,12 +52,12 @@ const getSearch =(e)=>{
     return (
         <div className="App">
             
-            <form  className="search-form" onSubmit={getSearch}>
+      <form  className="search-form" onSubmit={getSearch}>
            
        <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}/>
        <button className="search-btn" type="submit" value={search} >Search</button>
      </form>
-        <div className="recipie">
+        <div className="recipies">
             {recipies.map(recipe =>{
                 return (
                 <RecipeCard
@@ -65,6 +66,7 @@ const getSearch =(e)=>{
                 calorie= {recipe.recipe.calories}  
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
+                
                 
                 />)
             })}
