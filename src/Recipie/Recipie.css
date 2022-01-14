@@ -19,7 +19,7 @@
     bottom: none;
     padding: 10px;
     border-radius: 12px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .search-btn{
@@ -27,5 +27,11 @@
     border: none;
     padding: 10px 20px;
     border-radius: 12px;
-    margin-top: 200px;
+    margin-top: 150px;
+}
+.recipie{
+    display: flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  margin-top: 80px;
 }
