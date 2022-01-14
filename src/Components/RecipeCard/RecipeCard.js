@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './RecipeCard.css';
 import '../../Recipie/Recipie.css';
 
@@ -7,6 +7,11 @@ export function RecipeCard({title, calorie,image,ingredients,cuisineType,dietLab
 
  //const calories=Math.round({calorie})
 // Function 
+const[toggle, setToggle]=useState();
+const changeState=()=>{
+    setToggle(!toggle);
+}
+
 
 
 
@@ -36,7 +41,8 @@ export function RecipeCard({title, calorie,image,ingredients,cuisineType,dietLab
                 <h3>{title} </h3>
                
             </div>
-            <button  ><i class="fas fa-heart"></i></button>
+            <button className={toggle? 'activeToggle':'fas'} onClick={changeState} ><i class="far fa-heart"></i></button>
+           
         </div>
     )
 }

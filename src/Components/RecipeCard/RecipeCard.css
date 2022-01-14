@@ -75,17 +75,21 @@ opacity: 1;
   
 
    .fas{
-       color:rgb(126, 118, 118);
+       
        
        font-size:25px;
    }
 
    .recipe button{
-       border: none;
+       border:none;
        position: absolute;
-       right: 5px;
+       right: 15px;
        bottom: 8px;
-       background-color:transparent;
+      
    }
-  
+   
+  .activeToggle{
+      color: red ;
+      font-size: 25px;
+  }
   
