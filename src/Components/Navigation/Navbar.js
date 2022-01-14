@@ -36,9 +36,9 @@ export function Navbar() {
               return isActive ? {color:'red'}:{color:'violet'}
           }}>Home</NavLink>
 
-          <NavLink to='/recipie' className="items" style={({isActive})=>{
+          <NavLink to='/recipe' className="items" style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
-          }}>Recipie</NavLink>
+          }}>Recipe</NavLink>
 
           <NavLink to='/favorite' className="items" style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
