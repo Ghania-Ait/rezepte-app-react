@@ -35,9 +35,16 @@ export function Navbar() {
           <NavLink to='/' className='items' style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
           }}>Home</NavLink>
+
+          <NavLink to='/recipie' className="items" style={({isActive})=>{
+              return isActive ? {color:'red'}:{color:'violet'}
+          }}>Recipie</NavLink>
+
           <NavLink to='/favorite' className="items" style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
           }}>Favorite</NavLink>
+
+
           <NavLink to='/contact' className="items" style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
           }}>Contact</NavLink>
@@ -46,7 +53,7 @@ export function Navbar() {
         
         
           
-          <button className="btn" onClick={toggleNavSmallScreen}><a href="https://www.flaticon.com/free-icons/menu" title="menu icons"></a></button>
+          <button className="btn" onClick={toggleNavSmallScreen}><i className="fas fa-align-justify"></i></button>
 
         </nav>
 

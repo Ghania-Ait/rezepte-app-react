@@ -1,6 +1,7 @@
 import React from 'react';
 import './contact.css'
 
+
 export function Contact(props) {
     
 

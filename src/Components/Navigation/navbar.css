@@ -25,12 +25,16 @@ nav{
     cursor: pointer;
     
     
+    
 
 }
 .btn{
     display: none;
-    
-}
+    padding: 5px 8px;
+    font-size: 20px;
+    background:linear-gradient(45deg, rgb(156,14,156),midnightblue);
+    outline: none;
+    border: none;box-shadow: 5px 5px 10px  rgb(156,14,156), -5px -5px 10px midnightblue;}
 
 @media screen and (max-width:500px) {
     .liste {
@@ -56,10 +60,13 @@ nav{
         display: block;
         position:absolute;
         right:10px;
-        top: 10px;
+        top: 6px;
         color:black;
         cursor: pointer;
         
         
+        
     }
+
+    
 }
