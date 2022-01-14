@@ -2,7 +2,7 @@
 
 .recipe{
     background-color: #ffffff;
-    height: 350px;
+    height: 270px;
     width: 300px;
     margin: 200px auto 0;
     position: relative;
@@ -12,7 +12,7 @@
 
 }
 .recipe:hover{
-    height: 700px;
+    height: 300px;
 }
 
 img{
@@ -23,8 +23,14 @@ img{
     top: -30px;
     border-radius: 12px;
     z-index: 500;
+    transition: all 1s;
 
 
+
+}
+.recipe:hover img{
+    top: -100px;
+    border-radius: 50%;
 }
 
 
@@ -36,18 +42,19 @@ img{
     position: absolute;
     bottom: 0;
     padding: 25px;
+    
  
   
   }
 
-   .container h3, .container p{
+   .container > h3{
       text-align: center;
   }
 
-  .container h4, .container ol{
+  .container p, {
       opacity: 0;
-      transition: all 2s;
-      font-size: 12px;
+      transition: all 4s;
+     
 
   }
   .recipe:hover .container h4 {
@@ -56,7 +63,7 @@ opacity: 1;
   
 
   }
-  .recipe:hover .container ol {
+  .recipe:hover .container p {
     
     opacity: 1;
       

@@ -63,10 +63,12 @@ const getSearch =(e)=>{
                 <RecipeCard
                 key={Math.floor(Math.random() * 8000)}
                 title={recipe.recipe.label}
+                cuisineType={recipe.recipe.cuisineType[0]}
+                dietLabels={recipe.recipe.dietLabels[0]}
                 calorie= {recipe.recipe.calories}  
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
-                
+
                 
                 />)
             })}
