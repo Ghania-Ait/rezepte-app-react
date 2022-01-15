@@ -1,25 +1,28 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect, useContext} from 'react'
 import './Recipie.css';
 import '../Components/RecipeCard/RecipeCard.css'
-import RecipeCard from '../Components/RecipeCard/RecipeCard'
+import RecipeCard from '../Components/RecipeCard/RecipeCard';
+import {Context} from '../Context/Context';
 
 export function Recipie(props) {
     const appId='1cfbdff4';
   const appKey='74ba7c7b51afa32db443bbf058520bcd';
+
   
+  const {recipies,setRecipies,search,setSearch} = useContext(Context)
   
   //daten  mit API holen 
-  const[recipies,setRecipies]=useState([]); 
+  // const[recipies,setRecipies]=useState([]); 
 
   //state für suche nach Rezepte
-  const [search,setSearch]=useState('');
+  //const [search,setSearch]=useState('');
 
   // state fürs search button 
   const[text,setText]=useState('Chicken');
 
   
 
-  useEffect(()=>{
+ useEffect(()=>{
     fetch(`https://api.edamam.com/search?q=${text}&app_id=${appId}&app_key=${appKey}`)
    
    .then(response => 
@@ -27,13 +30,13 @@ export function Recipie(props) {
      //response.json())
    .then(data=>{
      setRecipies(data.hits)
-     console.log(data.hits) 
+    // console.log(data.hits) 
    })
  },[text])
 
 // function
 
-//  input werte holen 
+//  input inhalt holen 
 const UpDateSearch= e =>{
     setSearch(e.target.value)
     //console.log(e.target.value)
