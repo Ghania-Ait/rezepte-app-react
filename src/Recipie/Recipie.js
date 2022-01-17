@@ -29,8 +29,12 @@ export function Recipie(props) {
      response.json())
      //response.json())
    .then(data=>{
+    
+
+
      setRecipies(data.hits)
-    // console.log(data.hits) 
+    
+    //console.log(data.hits) 
    })
  },[text])
 
@@ -57,7 +61,7 @@ const getSearch =(e)=>{
             
       <form  className="search-form" onSubmit={getSearch}>
            
-       <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}/>
+       <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}  />
        <button className="search-btn" type="submit" value={search} >Search</button>
      </form>
         <div className="recipies">
@@ -71,6 +75,7 @@ const getSearch =(e)=>{
                 calorie= {recipe.recipe.calories}  
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
+                recipe={recipe}
 
                 
                 />)
