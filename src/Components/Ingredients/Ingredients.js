@@ -6,15 +6,16 @@ import {Link} from 'react-router-dom'
 export function Ingredients(props) {
     const {recipies,newRecipe}=useContext(Context)
    
-     console.log(newRecipe)
+    
     return (
 
-        <div>
-            <section className="section-ingredients">
+        <div className="container-ingredients">
+            
 
-            <h1>{newRecipe.title} </h1>
+            <section className="section-ingredients">
+            <p>{newRecipe.title} </p>
            <img src={newRecipe.image} alt={newRecipe.title} />
-              <h4> Ingredient: </h4>
+              <h4> Ingredients: </h4>
                  <ol className='ingredients'>
                     { newRecipe.Ingredients.map(ingredient =>( 
                         <li>{ingredient.text} </li>
@@ -24,8 +25,10 @@ export function Ingredients(props) {
                     }
                     {/* <li>{ingredients.text}</li> */}
                 </ol>    
+                <button className="add-fav-btn">Add to favorite list</button>
             </section>
-            <Link to='/recipe'><p>   Retour to Recipe </p> </Link>
+            <Link to='/recipe'><i class="fas fa-arrow-alt-circle-left"></i><p>   Retour to Recipe </p> </Link>
+           
            
         </div>
     )

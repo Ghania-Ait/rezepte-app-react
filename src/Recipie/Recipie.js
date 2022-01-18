@@ -34,7 +34,7 @@ export function Recipie(props) {
 
      setRecipies(data.hits)
     
-    //console.log(data.hits) 
+    console.log(data.hits) 
    })
  },[text])
 

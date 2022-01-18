@@ -1,4 +1,4 @@
-import React, {useState,useContext,useRef} from 'react'
+import React, {useState,useContext} from 'react'
 import './RecipeCard.css';
 import '../../Recipie/Recipie.css';
 import {Link} from 'react-router-dom';
@@ -15,68 +15,85 @@ export function RecipeCard({title, calorie,image,ingredients,cuisineType,dietLab
  //const calories=Math.round({calorie})
 // Function 
 // State für Like (Hearth)
-const {recipies,setRecipies,recipe,recipeFav, setRecipeFav, setNewRecipe} = useContext(Context)
-
-const toggle= useRef(false);
+const {recipies,setRecipies,recipe,recipeFav, setRecipeFav, setNewRecipe,leseListe,setLeseListe} = useContext(Context)
 
 
-// useEffect(() =>{
-//     const addToFavorites=()=>{
+const [toggle, setToggle]= useState(false);
 
-//         setRecipeFav([
-//             ...recipeFav,{text:{title}, like:'true',id:Math.random()*8000}
-           
-//         ])
-        
-//        console.log('1',recipeFav)
-//     }
+// Add to lese Listen
+const addToLeseListe=()=>{
+    setLeseListe([
+                       ...leseListe, {title}
+                      
+                   ])
+                   
+                  console.log('1',leseListe)
+               }
 
-// // console.log('toggle', {toggle})
+// speichert leseRezepte
+const saveLeseRezepte=()=>{
 
-// if (toggle.current === true ){
-//     addToFavorites();
-//     saveLocalFavRecipe();
+   if (leseListe.find((item)=> item.title===title )) {
+     const resultFilter = leseListe.filter((item)=>item.title !== title)
+     setLeseListe(resultFilter)
+   }else{
+    addToLeseListe() 
+   }
 
-// }
+//addToLeseListe();
+//   localStorage.setItem('leseList',JSON.stringify([]))
     
-// },[toggle])
-
-
-const saveLocalFavRecipe=()=>{
-    //  console.log('savefav')
-      if(localStorage.getItem('recipeFav')=== null){
-          localStorage.setItem('recipeFav',JSON.stringify([]))
-      }else{
-          console.log({recipeFav})
-          localStorage.setItem('recipeFav',JSON.stringify(recipeFav))
-      }
+    // localStorage.setItem('leseListe',JSON.stringify(leseListe))
+      
   }
 
-const clickToggle=()=>{
-    toggle.current = true;
 
-
-
-    const addToFavorites=()=>{
-
-      setRecipeFav([
-                    ...recipeFav,{text:{title}, like:'true',id:Math.random()*8000}
-                   
-                ])
-                
-               console.log('1',recipeFav)
-            }
-        
-        // console.log('toggle', {toggle})
-        
-        if (toggle.current === true ){
-            console.log(toggle.current)
-            addToFavorites();
-            saveLocalFavRecipe();
-        
-        }
-  
+const saveLocalFavRecipe =()=>{
+    if(localStorage.getItem('les')=== null){
+        localStorage.setItem('recipeFav',JSON.stringify([]))
+    }else{
+        console.log({recipeFav})
+        localStorage.setItem('recipeFav',JSON.stringify(recipeFav))
+    }
 }
+
+
+
+
+
+
+
+
+//   const addToFavorites=()=>{
+//     setRecipeFav([
+//                    ...recipeFav,{text:{title}, like:'true',id:Math.random()*8000}
+                  
+//                ])
+               
+//               console.log('1',recipeFav)
+//            }
+
+// const clickToggle=()=>{
+//     toggle = true;
+//     const addToFavorites=()=>{
+//      setRecipeFav([
+//                     ...recipeFav,{text:{title}, like:'true',id:Math.random()*8000}
+                   
+//                 ])
+                
+//                console.log('1',recipeFav)
+//             }
+        
+//         // console.log('toggle', {toggle})
+        
+//         if (toggle === true ){
+//             console.log(toggle.current)
+//             addToFavorites();
+//             saveLocalFavRecipe();
+        
+//         }
+  
+// }
 
 
 
@@ -95,14 +112,14 @@ const clickToggle=()=>{
 //   }
 
 
-const changeClass=()=>{
-    // setToggle(!toggle);
-    toggle.current = true
+// const changeClass=()=>{
+//      setToggle(!toggle);
+   
 
     
 
-    //add status for Recipe
-}
+//     //add status for Recipe
+// }
 //  const addToFavorites=()=>{
 
 //     setRecipeFav([
@@ -112,12 +129,21 @@ const changeClass=()=>{
     
 //    console.log(recipeFav)
 // }
+const filtredRecipe=()=>{
+ 
+   const findTitle=leseListe.find((item)=> item.title === title);
+
+    setToggle(findTitle)
 
 
+}
 
 
-
-
+useEffect(()=>{
+    filtredRecipe();
+    localStorage.setItem('leseListe',JSON.stringify(leseListe));
+   // console.log(leseListe)
+},[leseListe])
 
 
 
@@ -129,26 +155,18 @@ const changeClass=()=>{
             <img className="img" src={image} alt={title}/>
               
              <div className="container"> 
-             {/* <h4> Ingredient: </h4>
-                <ol>
-                    { ingredients.map(ingredient =>( 
-                        <li>{ingredient.text} </li>
-                        
-                    ))}
-                </ol> */}
-                
+            
                 <div><h5>Calories:</h5>{calorie}</div> 
                 <div><h5>Cuisine-type</h5>{cuisineType}</div> 
                 <div><h5>Diet-Labels</h5>{dietLabels}</div>  
                 
-          
-                {/* <h3>{title} </h3> */}
                 <Link to='/recipe/recipeCard/ingredients' onClick={()=> setNewRecipe({Ingredients:ingredients, title:title, image:image})} ><h3>{title}</h3> </Link>
               
               
                
             </div>
-            <button className={toggle.current ? 'activeToggle':'fas'} onClick={clickToggle}   ><i className="far fa-heart"></i></button>
+            <button className={toggle ? 'activeToggle':'fas'} onClick={saveLeseRezepte}><i className="far fa-heart"></i></button>
+            {/* <button className={toggle.current ? 'activeToggle':'fas'} onClick={clickToggle}   ><i className="far fa-heart"></i></button> */}
           
           
 
@@ -157,4 +175,7 @@ const changeClass=()=>{
         </div>
     )
 }
+
+
+
 export default RecipeCard 

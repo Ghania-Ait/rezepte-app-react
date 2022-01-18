@@ -15,7 +15,7 @@
     height: 350px;
 }
 
-img{
+.img{
     height: 250px;
     width: 250px;
     position: absolute;
@@ -28,7 +28,7 @@ img{
 
 
 }
-.recipe:hover img{
+.recipe:hover .img{
     top: -100px;
     border-radius: 50%;
 }

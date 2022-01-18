@@ -8,7 +8,28 @@ const ContextProvider= props =>{
     const [status,setStatus]=useState('false');
     const[recipeFav, setRecipeFav]=useState([]);
 
-    const[newRecipe, setNewRecipe]=useState('')
+    const[newRecipe, setNewRecipe]=useState('');
+    
+    const[leseListe,setLeseListe]=useState([]);
+
+
+
+
+// tested ob im Localstorage daten gespeichert sind
+useEffect(() =>{
+
+    const getLocalListe= ()=>{
+         if(localStorage.getItem('leseListe') === null){
+           localStorage.setItem('leseListe', JSON.stringify([]));
+         }else{
+          let listeLocal= JSON.parse(localStorage.getItem('leseListe'));
+          setLeseListe(listeLocal);
+        
+      }
+      }
+      getLocalListe();
+    
+ },[])
 
 //    useEffect(()=>{
 //    recipies.map((recipie)=>{
@@ -28,7 +49,7 @@ const ContextProvider= props =>{
 
 
     return (
-        <Context.Provider value={{recipies,setRecipies,search,setSearch,setStatus, recipeFav,setRecipeFav,newRecipe, setNewRecipe}}>
+        <Context.Provider value={{recipies,setRecipies,search,setSearch,setStatus, recipeFav,setRecipeFav,newRecipe, setNewRecipe,leseListe,setLeseListe}}>
             {props.children}
         </Context.Provider>
     )
