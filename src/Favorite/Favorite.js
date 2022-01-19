@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import'../Components/RecipeCard/RecipeCard.css';
 import '../../src/Recipie/Recipie.css';
 import './favorite.css';
@@ -9,14 +9,38 @@ import {Link} from 'react-router-dom';
 
  function Favorite(props) {
     
-const{recipeFav,recipies}= useContext(Context)
-    const neuArray= recipies.filter((item)=>recipeFav.includes(item.recipe.label))
+const{recipeFav,recipies,setRecipeFav}= useContext(Context)
+const[newArrayFav, setNewArrayFav]=useState([]);
+
+   // const neuArray= recipies.filter((item)=>recipeFav.includes(item.recipe.label))
+
+    const deleteRecipe=(item)=>{
+        console.log('recipfav', recipeFav);
+        console.log('Item',item);
+        
+        const resultFilter=recipeFav.filter((e)=> e !== item)
+        setRecipeFav(resultFilter)
+      //console.log('resultfilter', resultFilter );
+    }
+
+
+useEffect(()=>{
+    const result=newArrayFav.map((item)=> item.recipe.label )
+    localStorage.setItem('recipeFav',JSON.stringify(result));
+   // console.log(leseListe)
+},[newArrayFav])
+
+useEffect(()=>{
+    const neuArray= recipies.filter((item)=>recipeFav.includes(item.recipe.label)) ;
+    setNewArrayFav(neuArray);
+},[recipeFav])
+
 
 
     return (
         <div className="App-fav"  >
               <div className="recipies-fav">
-              {neuArray.map(recipe =>{
+              {newArrayFav.map(recipe =>{
                 return (
 
 
@@ -36,7 +60,7 @@ const{recipeFav,recipies}= useContext(Context)
               
                
             </div>
-            <button ><i className="fas fa-trash-alt"></i></button>
+            <button onClick={()=>deleteRecipe(recipe.recipe.label)} ><i className="fas fa-trash-alt"></i></button>
           
         </div>
                 // <RecipeCard

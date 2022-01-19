@@ -1,14 +1,15 @@
 import React from 'react';
-import './contact.css'
+import './contact.css';
+import Form from '../Components/Form/Form'
 
-
-export function Contact(props) {
+ function Contact(props) {
     
 
     return (
-        <div>
-            <h1 className="contact-title">section contact</h1>
-        </div>
+        <>
+          <Form/>  
+        </>
     )
 }
-export default Contact;
+
+export default Contact

@@ -72,7 +72,7 @@ useEffect(()=>{
             
                 <div><h5>Calories:</h5>{calorie}</div> 
                 <div><h5>Cuisine-type</h5>{cuisineType}</div> 
-                <div><h5>Diet-Labels</h5>{dietLabels}</div>  
+                <div className='title'><h5>Diet-Labels</h5>{dietLabels}</div>  
                 
                 <Link to='/recipe/recipeCard/ingredients' onClick={()=> setNewRecipe({Ingredients:ingredients, title:title, image:image, cuisineType:cuisineType})} ><h3>{title}</h3> </Link>
               

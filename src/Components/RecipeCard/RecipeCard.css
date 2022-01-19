@@ -71,6 +71,7 @@ opacity: 1;
       } 
    .container h5{
        color: red;
+       font-size: 10px;
    }
   
 
@@ -78,6 +79,10 @@ opacity: 1;
        
        
        font-size:25px;
+       color: black !important;
+   }
+   .title{
+       font-size: 10px;
    }
 
    .recipe button{
