@@ -11,12 +11,6 @@ export function Recipie(props) {
   
   const {recipies,setRecipies,search,setSearch} = useContext(Context)
   
-  //daten  mit API holen 
-  // const[recipies,setRecipies]=useState([]); 
-
-  //state für suche nach Rezepte
-  //const [search,setSearch]=useState('');
-
   // state fürs search button 
   const[text,setText]=useState('Chicken');
 
@@ -34,7 +28,7 @@ export function Recipie(props) {
 
      setRecipies(data.hits)
     
-    console.log(data.hits) 
+    console.log('fetch', data.hits) 
    })
  },[text])
 

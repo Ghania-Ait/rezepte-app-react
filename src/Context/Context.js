@@ -31,6 +31,29 @@ useEffect(() =>{
     
  },[])
 
+
+ useEffect(()=>{
+    const getLocalFavRecipe =()=>{
+        if(localStorage.getItem('recipeFav')=== null){
+            localStorage.setItem('recipeFav',JSON.stringify([]))
+           // console.log('ich bin if');
+        }else{
+            //console.log({recipeFav})
+            let localFav= JSON.parse(localStorage.getItem('recipeFav'))
+            
+            setRecipeFav(localFav)
+           // console.log('ich bin else');
+        }
+        
+
+        } 
+        getLocalFavRecipe()
+ },[])
+
+
+
+
+
 //    useEffect(()=>{
 //    recipies.map((recipie)=>{
 //       recipie.favRecipe= true;
