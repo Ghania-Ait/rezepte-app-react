@@ -1,5 +1,97 @@
-.favorite-title{
-    font-size: 60px;
-    margin: 100px 0 40px;
-    text-align: center;
+.recipe-fav{
+    background-color: #d4cece;
+    height: 300px;
+    width: 300px;
+    margin: 200px auto 0;
+    position: relative;
+    border-radius: 12px;
+    transition: all 1s;
+    border:2px solid red;
+    
+
 }
+.App-fav{
+    min-height: 100vh;
+   
+    /* background-image:linear-gradient(to right, #fa709a 0%, #fee140 100%); */
+    background-image: linear-gradient(#3a3494, rgb(112, 64, 114),#0c3d68  );
+}
+.recipe-fav:hover{
+    height: 350px;
+}
+
+.img-fav{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+     left: 25px; 
+    top: -30px;
+    border-radius: 12px;
+    z-index: 500;
+    transition: all 1s;
+
+
+
+}
+.recipe-fav:hover .img-fav{
+    top: -100px;
+    border-radius: 50%;
+}
+
+.container-fav{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    
+ 
+  
+  }
+
+   .container-fav > h3{
+      text-align: center;
+  }
+
+  .container-fav div {
+    opacity: 0;
+    transition: all 3s;
+   
+
+}
+
+.recipe-fav:hover .container-fav h4 {
+    
+    opacity: 1;
+      
+    
+      }
+
+.recipe-fav:hover .container-fav div {
+    
+        opacity: 1;
+          
+        
+          } 
+.container-fav h5{
+            color: red;
+        }
+
+
+
+ .fas{
+    font-size:25px;
+    color:rgb(170, 73, 73);
+        }
+.recipe-fav button{
+            border:none;
+            position: absolute;
+            right: 15px;
+            bottom: 8px;
+           
+        }
+  .recipies-fav{
+            display: flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            
+          }
+          
