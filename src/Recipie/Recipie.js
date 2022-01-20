@@ -3,6 +3,7 @@ import './Recipie.css';
 import '../Components/RecipeCard/RecipeCard.css'
 import RecipeCard from '../Components/RecipeCard/RecipeCard';
 import {Context} from '../Context/Context';
+import Header from '../Components/Header/Header';
 
 export function Recipie(props) {
     const appId='1cfbdff4';
@@ -53,9 +54,9 @@ const getSearch =(e)=>{
     return (
         <div className="App">
 
-         <h1>Find Meals For Your Ingredient</h1>   
+              <Header/> 
       <form  className="search-form" onSubmit={getSearch}>
-           
+      
        <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}  />
        <button className="search-btn" type="submit" value={search} >Search</button>
      </form>
