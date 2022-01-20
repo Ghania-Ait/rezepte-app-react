@@ -52,7 +52,8 @@ const getSearch =(e)=>{
 
     return (
         <div className="App">
-            
+
+         <h1>Find Meals For Your Ingredient</h1>   
       <form  className="search-form" onSubmit={getSearch}>
            
        <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}  />
@@ -66,7 +67,7 @@ const getSearch =(e)=>{
                 title={recipe.recipe.label}
                 cuisineType={recipe.recipe.cuisineType[0]}
                 dietLabels={recipe.recipe.dietLabels[0]}
-                calorie= {recipe.recipe.calories}  
+                calorie= {Math.round(recipe.recipe.calories )}  
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
                 recipe={recipe}

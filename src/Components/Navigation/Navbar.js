@@ -32,9 +32,9 @@ export function Navbar() {
     return (
         <nav >
             {(toggleMenu || width > 500) &&( <ul className="liste">
-          <NavLink to='/' className='items' style={({isActive})=>{
+          {/* <NavLink to='/' className='items' style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}
-          }}>Home</NavLink>
+          }}>Home</NavLink> */}
 
           <NavLink to='/recipe' className="items" style={({isActive})=>{
               return isActive ? {color:'red'}:{color:'violet'}

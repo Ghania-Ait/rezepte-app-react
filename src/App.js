@@ -22,9 +22,9 @@ function App() {
       <Navbar/>  
      <ContextProvider>
      <Routes>
-       <Route path="/" element={<Home/>}/>
+       {/* <Route path="/" element={<Home/>}/> */}
        <Route path="/favorite" element={<Favorite/>}/>
-       <Route path="/recipe" element={<Recipie/>}/>
+       <Route path="/" element={<Recipie/>}/>
         
        <Route path='/recipe/recipeCard/ingredients' element={<Ingredients/>}/>
        {/* <Route path='/recipe/recipeCard' element={<RecipeCard/>}/> */}
