@@ -12,6 +12,7 @@
 }
 .container-form label{
     font-size: 20px;
+    color:rgb(187, 163, 163);
 }
 .container-form input, .container-form textarea{
     padding: 10px;
@@ -25,8 +26,15 @@
 .container-form button{
     padding: 10px 15px;
     width: 200px;
-    background:transparent;
+    background:rgb(223, 145, 145);;
     border: 1px solid rgba(0,0,0,0.8);
     border-radius:3px;
     cursor: pointer;
+    background: lightcoral;
+    border-radius:15px;
+   
+}
+.form h1{
+color: rgb(226, 111, 111);
+padding: 10px;
 }

@@ -6,7 +6,7 @@ export function Form(props) {
     
 
     return (
-        <div>
+        <div className='form'>
             <h1 className="title-contact">Contact Us:</h1>
 
             <form className="container-form">

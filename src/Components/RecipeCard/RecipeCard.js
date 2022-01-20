@@ -74,12 +74,13 @@ useEffect(()=>{
                 <div><h5>Cuisine-type</h5>{cuisineType}</div> 
                 <div className='title'><h5>Diet-Labels</h5>{dietLabels}</div>  
                 
-                <Link to='/recipe/recipeCard/ingredients' onClick={()=> setNewRecipe({Ingredients:ingredients, title:title, image:image, cuisineType:cuisineType})} ><h3>{title}</h3> </Link>
+                <Link to='/recipe/recipeCard/ingredients' onClick={()=> setNewRecipe({Ingredients:ingredients, title:title, image:image, cuisineType:cuisineType})} ><h4>{title}</h4> </Link>
               
               
                
             </div>
             <button className={toggle ? 'activeToggle':'fas'} onClick={saveLeseRezepte}><i className="far fa-heart"></i></button>
+           
           
         </div>
     )

@@ -38,7 +38,10 @@ useEffect(()=>{
 
 
     return (
+
         <div className="App-fav"  >
+
+            <h1>Your Favorite List</h1>
               <div className="recipies-fav">
               {newArrayFav.map(recipe =>{
                 return (

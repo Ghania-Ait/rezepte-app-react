@@ -13,7 +13,7 @@ export function Recipie(props) {
   const {recipies,setRecipies,search,setSearch} = useContext(Context)
   
   // state fürs search button 
-  const[text,setText]=useState('Chicken');
+  const[text,setText]=useState('pomme de terre');
 
   
 
@@ -57,9 +57,10 @@ const getSearch =(e)=>{
               <Header/> 
       <form  className="search-form" onSubmit={getSearch}>
       
-       <input type="text" className="search-bar" placeholder='Worauf hast du appetit?' onChange={UpDateSearch}  />
+       <input type="text" className="search-bar" placeholder='What would you like?' onChange={UpDateSearch}  />
        <button className="search-btn" type="submit" value={search} >Search</button>
      </form>
+     <p>The Result of your search is : {recipies.length} </p>
         <div className="recipies">
             {recipies.map(recipe =>{
                 return (

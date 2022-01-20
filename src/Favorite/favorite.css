@@ -16,6 +16,12 @@
     /* background-image:linear-gradient(to right, #fa709a 0%, #fee140 100%); */
     background-image: linear-gradient(#3a3494, rgb(112, 64, 114),#0c3d68  );
 }
+.App-fav h1{
+    margin: 100px;
+    color: rgb(228, 99, 99);
+    padding: 10px;
+}
+
 .recipe-fav:hover{
     height: 350px;
 }
